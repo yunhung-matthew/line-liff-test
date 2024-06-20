@@ -14,12 +14,28 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function renderHelloWorld() {
-    const {
-        userId,
-        displayName,
-        pictureUrl,
-        statusMessage,
-    } = liff.getProfile();
+    if (!liff.isLoggedIn()) {
+        liff.login();
+    } else {
+        liff
+            .getProfile()
+            .then((profile) => {
+                const {
+                    userId,
+                    displayName,
+                    pictureUrl,
+                    statusMessage,
+                } = profile
+                console.log('liff.getProfile()', profile)
 
-    document.querySelector('.welcome').innerText = `Hi~ ${displayName}!`
+                document.querySelector('.welcome').innerText = `Hi~ ${displayName}!`
+
+            })
+            .catch((err) => {
+                console.log("error", err);
+            });
+    
+        const idToken = liff.getIDToken();
+        console.log('idToken', idToken);
+    }
 }
