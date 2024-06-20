@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><link rel="stylesheet" href="index.css"/><title>LIFF Starter</title><script defer="defer" src="/main.bundle.js"></script><link href="/main.css" rel="stylesheet"></head><body><div class="home"><h1 class="home__title">馬修嚴選<br/><a class="home__title__link" href="https://developers.line.biz/en/docs/liff/overview/">員購小幫手</a></h1><div class="welcome">Hi~!</div><ul class="product-list"><li class="product"><img src="https://api.matthewschoice.com/storage/ckeditor/91455/thumbs/20240605171600108.png"><div class="block"><span class="product-name">Pro+乳蛋白優格飲-蜂蜜檸檬口味</span><div class="control"><button class="btn-add" data-id="1">+</button> <button class="btn-sub" data-id="1">-</button><div class="sub-total" data-id="1">0</div></div></div></li><li class="product"><img src="https://api.matthewschoice.com/storage/ckeditor/91455/thumbs/20240503172826590.png"><div class="block"><span class="product-name">蔓越莓洛神果漿(250g/罐)</span><div class="control"><button class="btn-add" data-id="2">+</button> <button class="btn-sub" data-id="2">-</button><div class="sub-total" data-id="2">0</div></div></div></li><li class="product"><img src="https://api.matthewschoice.com/storage/ckeditor/91455/thumbs/20231109120537631.png"><div class="block"><span class="product-name">優格益生菌(30入/罐)</span><div class="control"><button class="btn-add" data-id="3">+</button> <button class="btn-sub" data-id="3">-</button><div class="sub-total" data-id="3">0</div></div></div></li></ul><button class="btn-submit">送單</button></div></body><script>const data = {
+      '1': 0,
+      '2': 0,
+      '3': 0,
+    }
+    document.querySelectorAll('.btn-add').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const id = e.target.dataset.id;
+        document.querySelector(`.sub-total[data-id="${id}"]`).innerText = ++data[id];
+      })
+    })
+    document.querySelectorAll('.btn-sub').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const id = e.target.dataset.id;
+        document.querySelector(`.sub-total[data-id="${id}"]`).innerText = --data[id];
+      })
+    })</script></html>
