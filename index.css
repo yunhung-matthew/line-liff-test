@@ -148,3 +148,48 @@ html, body {
     flex-direction: column;
   }
 }
+.welcome {
+  font-size: 2rem;
+}
+ul.product-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+ul.product-list img {
+  width: 30vw;
+}
+ul.product-list .product {
+  display: flex;
+}
+ul.product-list .product .block {
+  display: flex;
+  flex-direction: column;
+}
+ul.product-list .product .block .control {
+  display: flex;
+  gap: 10px;
+}
+ul.product-list .product .block .control button {
+  padding: 2rem;
+  font-size: 3rem;
+}
+ul.product-list .product .block .control .sub-total {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-name {
+  font-size: 1.6rem;
+}
+
+.btn-submit {
+  margin-top: 3rem;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+}
