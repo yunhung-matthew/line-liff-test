@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --progress",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
-    "@line/liff": "^2.16.0"
+    "@line/liff": "^2.16.0",
+    "gh-pages": "^6.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
